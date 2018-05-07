@@ -58,13 +58,13 @@ if latesttime.get_text() != timecheck:
     comment = urllib.parse.urlencode({"body":comment_.encode('euc-jp')});
     button  = urllib.parse.urlencode({"button":button_.encode('euc-jp')});         
     #post new commnet
-    newcmd = "curl -H 'Host: target_site.com' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Origin: http://target_site.com' -H 'Upgrade-Insecure-Requests: 1' -A 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1)' -H 'Content-Type: application/x-www-form-urlencoded' -e 'http://target_site.com/archives/%s.html' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: ja,en-us;q=0.8,en;q=0.6' -X POST -d '%s' -d '%s' -d '%s' http://app.blog.livedoor.jp/target_site/comment.cgi/%s/post -o response" % (a, author, comment , button, a);
+    newcmd = "curl -H 'Host: target_site.com' -H 'Connection: keep-alive' -H 'Cache-Control: max-age=0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Origin: http://target_site.com' -H 'Upgrade-Insecure-Requests: 1' -A 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1)' -H 'Content-Type: application/x-www-form-urlencoded' -e 'http://target_site.com/archives/%s.html' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: ja,en-us;q=0.8,en;q=0.6' -X POST -d '%s' -d '%s' -d '%s' http://target_site.com/comment.cgi/%s/post -o response" % (a, author, comment , button, a);
  
     #print(cmd);
     if argvs[1] == "u":
-      print("# only update mode");
+      print("# only for update mode");
     else:
-      print("# data has just post!!")
+      print("# data has just posted!!")
       print(newcmd);
       os.system(newcmd);
 

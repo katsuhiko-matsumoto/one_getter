@@ -17,7 +17,7 @@ TEST="test"
 if [ $# -eq 1 ]; then
   if [ $1 = "u" ]; then
     echo $1
-    echo "only time update"
+    echo "only for time update"
     python3 ./urlopen.py $1
     exit;
   fi
